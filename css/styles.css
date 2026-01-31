@@ -555,25 +555,6 @@ footer{
   to{ opacity:1; }
 }
 
-/* ================== AJUSTES DESKTOP / TABLET ================== */
-@media(min-width:768px){
-
-  body{
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    padding:40px 0;
-  }
-
-  .mobile-wrapper{
-    border-radius:26px;
-  }
-
-  /* Portada no tan alta en compu */
-  .hero-single{
-    height:90vh;
-  }
-}
 
 /* ================== AJUSTES CELULAR ================== */
 @media(max-width:480px){
