@@ -1,0 +1,613 @@
+/* ================== RESET ================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ================== VARIABLES ================== */
+:root{
+  --pink:#F6C1D1;
+  --silver:#B2FFFF;
+  --soft:#FDF7FA;
+  --text:#4a4a4a;
+}
+
+/* ================== BODY ================== */
+body{
+  font-family:'Cormorant Garamond', serif;
+  background:var(--soft);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ================== PORTADA ================== */
+.hero-single{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+
+.hero-single img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  z-index:1;
+}
+
+.hero-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+  z-index:2;
+  color:#B2FFFF;
+}
+
+.hero-text .name{
+  font-family:'Great Vibes', cursive;
+  font-size:80px;
+  letter-spacing:2px;
+  margin-bottom:8px;
+  opacity:0;
+  transform:translateY(20px);
+}
+
+.hero-text .title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px;
+  letter-spacing:3px;
+  margin-top:8px;
+  opacity:0;
+  transform:translateY(20px);
+}
+
+/* ================== SECCIONES ================== */
+.section{
+  margin:90px 25px;
+  text-align:center;
+}
+
+/* ================== TEXTO INVITACIÓN ================== */
+.invitation-text{
+  font-family:'Great Vibes', cursive;
+  font-size:28px;
+  line-height:1.9;
+  max-width:650px;
+  margin:0 auto;
+}
+
+/* ================== FECHA ================== */
+.event-date{
+  margin-top:40px;
+}
+
+.event-date span{
+  display:block;
+  font-size:18px;
+  letter-spacing:3px;
+}
+
+.event-date strong{
+  font-family: cursive;
+  display:block;
+  font-size:30px;
+  color:#F6C1D1;
+  margin:12px 0;
+}
+
+.event-date em{
+  font-size:26px;
+  font-style:normal;
+}
+
+/* ================== CONTADOR ================== */
+.countdown-section{
+  margin:100px 20px;
+  padding:90px 20px;
+  background:url('../img/portada2.jpg') center/cover no-repeat;
+  border-radius:30px;
+  text-align:center;
+  color:white;
+  position:relative;
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.countdown-section::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.30);
+  border-radius:30px;
+}
+
+.countdown-section h3,
+.countdown{
+  position:relative;
+  z-index:2;
+}
+
+.countdown-section h3{
+  font-family:'Great Vibes', cursive;
+  font-size:30px;
+  margin-bottom:35px;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.countdown div{
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);
+  padding:18px 14px;
+  border-radius:16px;
+  min-width:70px;
+}
+
+.countdown span{
+  display:block;
+  font-size:34px;
+  color:#B2FFFF;
+}
+
+/* ================== FAMILIA ================== */
+.family-message{
+  font-size:18px;
+  font-style:italic;
+  line-height:1.9;
+  max-width:620px;
+  margin:0 auto 35px;
+}
+
+.family-title{
+  display:block;
+  font-size:20px;
+  letter-spacing:2px;
+  color:var(--pink);
+  margin-bottom:10px;
+}
+
+.family-names{
+  font-family:'Great Vibes', cursive;
+  font-size:26px;
+  line-height:1.8;
+}
+
+/* ================== TÍTULOS ================== */
+.section h3{
+  font-size:32px;
+  font-weight:400;
+}
+
+/* ================== DIVIDER ================== */
+.divider{
+  width:60px;
+  height:2px;
+  background:linear-gradient(90deg, var(--pink), var(--silver));
+  margin:25px auto;
+}
+
+/* ================== GALERÍA ================== */
+.gallery-swiper{
+  padding-top:30px;
+  width:100%;
+  max-width:360px;
+  margin:0 auto;
+}
+
+.gallery-swiper img{
+  width:100%;
+  height:auto;
+  border-radius:22px;
+  object-fit:cover;
+}
+/* ================== CÓDIGO DE VESTIMENTA (ELEGANTE) ================== */
+.dresscode-section{
+  margin-top:120px;
+}
+
+/* Título en cursiva */
+.dresscode-title{
+  font-family:'Great Vibes', cursive;
+  font-size:46px;
+  font-weight:400;
+  margin-bottom:10px;
+}
+
+/* Texto refinado */
+.dresscode-text{
+  max-width:560px;
+  margin:35px auto 0;
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px;
+  line-height:1.9;
+  color:#555;
+}
+
+/* Color reservado */
+.dresscode-text strong{
+  font-weight:500;
+}
+/* ================== IMAGEN CÓDIGO DE VESTIMENTA ================== */
+.dresscode-image{
+  margin-top:1px;            /* 👈 más pegada al texto */
+  display:flex;
+  justify-content:center;
+}
+
+.dresscode-image img{
+  width:800px;                /* 👈 más grande */
+  max-width:120%;
+  opacity:.9;                 /* elegante */
+}
+
+
+/* ================== TIMELINE ================== */
+.timeline::before{
+  background:linear-gradient(var(--pink), var(--silver));
+}
+
+.timeline-dot{
+  background:#B2FFFF;
+}
+
+.timeline-time{
+  color:#B2FFFF;
+}
+
+/* ================== LÍNEA DEL TIEMPO ================== */
+.timeline{
+  position:relative;
+  text-align:center;
+  margin-top:60px;
+}
+
+/* Pueblo / lugar */
+.timeline-place{
+  display:block;
+  font-size:18px;
+  letter-spacing:3px;
+  margin-top:-10px;
+  color:#777;
+}
+
+/* Línea vertical */
+.timeline::before{
+  content:'';
+  position:absolute;
+  top:120px;
+  left:50%;
+  width:2px;
+  height:75%;
+  background:linear-gradient(
+    to bottom,
+    var(--pink),
+    var(--silver)
+  );
+  transform:translateX(-50%);
+  opacity:.8;
+}
+
+/* Item */
+.timeline-item{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  margin:55px 0;
+}
+
+/* Punto */
+.timeline-dot{
+  width:14px;
+  height:14px;
+ 
+  border-radius:50%;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  box-shadow:0 0 0 6px rgba(246,193,209,.25);
+}
+
+/* Contenido */
+.timeline-content{
+  background:rgba(255,255,255,.9);
+  padding:22px 28px;
+  border-radius:22px;
+  max-width:300px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+/* Hora */
+.timeline-time{
+  display:block;
+  font-size:16px;
+  letter-spacing:2px;
+  color:var(--pink);
+  margin-bottom:6px;
+}
+
+/* Título evento */
+.timeline-content h4{
+  font-family:'Great Vibes', cursive;
+  font-size:30px;
+  margin:0;
+  color:#555;
+}
+
+/* Texto */
+.timeline-content p{
+  margin-top:6px;
+  font-size:15px;
+  line-height:1.6;
+  color:#555;
+}
+
+/* ================== RESPONSIVE ================== */
+@media(max-width:768px){
+  .timeline::before{
+    top:100px;
+    height:80%;
+  }
+
+  .timeline-content{
+    max-width:260px;
+    padding:20px;
+  }
+}
+
+/* ================== BOTÓN MÚSICA ================== */
+#musicBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:none;
+  background:linear-gradient(135deg, var(--pink), var(--silver));
+  color:white;
+  font-size:22px;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+  z-index:100;
+  cursor:pointer;
+  animation:jump 2.5s infinite;
+}
+
+#musicBtn.playing{
+  animation:spin 3s linear infinite;
+}
+
+@keyframes jump{
+  0%{transform:translateY(0);}
+  20%{transform:translateY(-8px);}
+  40%{transform:translateY(0);}
+  60%{transform:translateY(-4px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+/* ================== FOOTER ================== */
+footer{
+  text-align:center;
+  padding:60px 10px;
+  font-size:14px;
+  color:#888;
+}
+
+/* ================== RESPONSIVE ================== */
+@media(max-width:768px){
+  .hero-text .name{ font-size:56px; }
+  .hero-text .title{ font-size:18px; }
+  .countdown span{ font-size:30px; }
+}
+
+/* ================== ANIMACIONES ================== */
+.animate-name.show{
+  animation:fadeUp 1.8s ease forwards;
+}
+
+.animate-title.show{
+  animation:fadeUp 1.8s ease forwards;
+  animation-delay:.8s;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+/* ================== MARIPOSAS ================== */
+#butterfly-container{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:999;
+}
+
+.butterfly{
+  position:absolute;
+  width:45px;
+  opacity:0;
+  animation:fly 6.5s ease-in-out forwards;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.25));
+}
+
+/* Movimiento elegante */
+@keyframes fly{
+  0%{
+    transform:translateY(100vh) scale(0.6) rotate(0deg);
+    opacity:0;
+  }
+  15%{
+    opacity:1;
+  }
+  50%{
+    transform:translateY(40vh) translateX(40px) scale(1) rotate(10deg);
+  }
+  100%{
+    transform:translateY(-20vh) translateX(-40px) scale(0.9) rotate(-10deg);
+    opacity:0;
+  }
+}
+
+/* Variaciones */
+.butterfly:nth-child(odd){
+  animation-duration:7s;
+}
+
+.butterfly:nth-child(even){
+  animation-duration:6s;
+}
+/* Imagen de mariposa */
+.butterfly-wing{
+  width:100%;
+  animation:flap 1.8s ease-in-out infinite;
+  transform-origin:center;
+}
+
+/* Movimiento sutil de alas */
+@keyframes flap{
+  0%{
+    transform:scaleX(1) rotate(0deg);
+  }
+  50%{
+    transform:scaleX(0.92) rotate(2deg);
+  }
+  100%{
+    transform:scaleX(1) rotate(0deg);
+  }
+}
+/* ================== INDICADOR DESLIZAR ================== */
+.scroll-indicator{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  color:white;
+  z-index:3;
+  opacity:.9;
+  animation:fadeIn 2s ease forwards;
+}
+
+.scroll-indicator span{
+  display:block;
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:6px;
+  opacity:.85;
+}
+
+/* Flecha */
+.scroll-indicator .arrow{
+  width:18px;
+  height:18px;
+  border-right:2px solid white;
+  border-bottom:2px solid white;
+  transform:rotate(45deg);
+  margin:0 auto;
+  animation:arrowMove 1.6s infinite ease-in-out;
+}
+
+/* Movimiento flecha */
+@keyframes arrowMove{
+  0%{
+    transform:rotate(45deg) translateY(0);
+    opacity:0;
+  }
+  50%{
+    opacity:1;
+  }
+  100%{
+    transform:rotate(45deg) translateY(10px);
+    opacity:0;
+  }
+}
+
+/* Entrada suave */
+@keyframes fadeIn{
+  from{ opacity:0; }
+  to{ opacity:1; }
+}
+
+/* ================== MODO SOLO CELULAR ================== */
+
+/* Fondo general en pantallas grandes */
+body{
+  background:linear-gradient(135deg, #FDF7FA, #EFFFFF);
+}
+
+/* Contenedor tipo celular */
+.mobile-wrapper{
+  max-width:420px;           /* ancho tipo celular */
+  margin:0 auto;
+  background:var(--soft);
+  min-height:100vh;
+  box-shadow:0 0 40px rgba(0,0,0,.15);
+  overflow:hidden;
+}
+
+/* ================== AJUSTES DESKTOP / TABLET ================== */
+@media(min-width:768px){
+
+  body{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 0;
+  }
+
+  .mobile-wrapper{
+    border-radius:26px;
+  }
+
+  /* Portada no tan alta en compu */
+  .hero-single{
+    height:90vh;
+  }
+}
+
+/* ================== AJUSTES CELULAR ================== */
+@media(max-width:480px){
+
+  .hero-text .name{
+    font-size:54px;
+  }
+
+  .hero-text .title{
+    font-size:17px;
+  }
+
+  .invitation-text{
+    font-size:24px;
+  }
+
+  .countdown-section{
+    padding:70px 15px;
+  }
+}
