@@ -555,18 +555,6 @@ footer{
   to{ opacity:1; }
 }
 
-/* ================== MODO SOLO CELULAR ================== */
-
-
-
-/* Contenedor tipo celular */
-.mobile-wrapper{
-  max-width: 430px;
-  margin: 0 auto;
-  background: var(--soft);
-  box-shadow: 0 0 40px rgba(0,0,0,.15);
-}
-
 /* ================== AJUSTES DESKTOP / TABLET ================== */
 @media(min-width:768px){
 
