@@ -554,24 +554,3 @@ footer{
   from{ opacity:0; }
   to{ opacity:1; }
 }
-
-
-/* ================== AJUSTES CELULAR ================== */
-@media(max-width:480px){
-
-  .hero-text .name{
-    font-size:54px;
-  }
-
-  .hero-text .title{
-    font-size:17px;
-  }
-
-  .invitation-text{
-    font-size:24px;
-  }
-
-  .countdown-section{
-    padding:70px 15px;
-  }
-}
