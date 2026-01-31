@@ -52,30 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- MÚSICA ---------- */
-const audio = document.getElementById('bgMusic');
-const btn = document.getElementById('musicBtn');
-let playing = false;
+  const audio = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicBtn');
+  let playing = false;
 
-if (btn && audio) {
-  btn.addEventListener('click', () => {
-    if (!playing) {
-      audio.muted = false;
-      audio.play()
-        .then(() => {
-          btn.classList.add('playing');
-          playing = true;
-        })
-        .catch(err => {
-          console.log("Audio bloqueado:", err);
-        });
-    } else {
-      audio.pause();
-      btn.classList.remove('playing');
-      playing = false;
-    }
-  });
-}
+  if (btn && audio) {
+    btn.addEventListener('click', () => {
+      if (!playing) {
+        audio.play();
+        btn.classList.add('playing');
+        playing = true;
+      } else {
+        audio.pause();
+        btn.classList.remove('playing');
+        playing = false;
+      }
+    });
+  }
 
+});
 /* ---------- ANIMACIÓN PORTADA ---------- */
 window.addEventListener('load', () => {
   const name = document.querySelector('.animate-name');
