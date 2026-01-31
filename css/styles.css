@@ -564,12 +564,10 @@ body{
 
 /* Contenedor tipo celular */
 .mobile-wrapper{
-  max-width:420px;           /* ancho tipo celular */
-  margin:0 auto;
-  background:var(--soft);
-  min-height:100vh;
-  box-shadow:0 0 40px rgba(0,0,0,.15);
-  overflow:hidden;
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--soft);
+  box-shadow: 0 0 40px rgba(0,0,0,.15);
 }
 
 /* ================== AJUSTES DESKTOP / TABLET ================== */
