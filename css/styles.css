@@ -557,10 +557,7 @@ footer{
 
 /* ================== MODO SOLO CELULAR ================== */
 
-/* Fondo general en pantallas grandes */
-body{
-  background:linear-gradient(135deg, #FDF7FA, #EFFFFF);
-}
+
 
 /* Contenedor tipo celular */
 .mobile-wrapper{
