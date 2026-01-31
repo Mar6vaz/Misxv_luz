@@ -1,21 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- GALERÍA / MEMORIAS ---------- */
+  /* ---------- GALERÍA ---------- */
   const gallerySwiper = new Swiper(".gallery-swiper", {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 15,
     centeredSlides: true,
-  
     autoplay: {
       delay: 2800,
       disableOnInteraction: false,
     },
-  
-    effect: "slide",
     speed: 900,
   });
-  
+
   /* ---------- ANIMACIONES SCROLL ---------- */
   AOS.init({
     duration: 1200,
@@ -59,9 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btn && audio) {
     btn.addEventListener('click', () => {
       if (!playing) {
-        audio.play();
-        btn.classList.add('playing');
-        playing = true;
+        audio.play().then(() => {
+          btn.classList.add('playing');
+          playing = true;
+        }).catch(err => {
+          console.log("Audio bloqueado:", err);
+        });
       } else {
         audio.pause();
         btn.classList.remove('playing');
@@ -70,32 +70,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- AUTO PLAY AL PRIMER TOQUE ---------- */
+  document.addEventListener("click", () => {
+    if (!playing && audio) {
+      audio.play().then(() => {
+        playing = true;
+        btn.classList.add("playing");
+      }).catch(() => {});
+    }
+  }, { once: true });
+
 });
+
 /* ---------- ANIMACIÓN PORTADA ---------- */
 window.addEventListener('load', () => {
   const name = document.querySelector('.animate-name');
   const title = document.querySelector('.animate-title');
 
-  if(name && title){
-    setTimeout(() => {
-      name.classList.add('show');
-    }, 400);
-
-    setTimeout(() => {
-      title.classList.add('show');
-    }, 1200);
+  if (name && title) {
+    setTimeout(() => name.classList.add('show'), 400);
+    setTimeout(() => title.classList.add('show'), 1200);
   }
 });
+
+/* ---------- OCULTAR INDICADOR ---------- */
 window.addEventListener("scroll", () => {
   const indicator = document.querySelector(".scroll-indicator");
   if (!indicator) return;
 
-  if (window.scrollY > 50) {
-    indicator.style.opacity = "0";
-    indicator.style.pointerEvents = "none";
-  } else {
-    indicator.style.opacity = "1";
-  }
+  indicator.style.opacity = window.scrollY > 50 ? "0" : "1";
 });
-
-
