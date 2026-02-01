@@ -49,31 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- MÚSICA ---------- */
-const audio = document.getElementById('bgMusic');
-const btn = document.getElementById('musicBtn');
-let playing = false;
-
-function startMusic() {
-  if (!playing && audio) {
-    audio.play().then(() => {
-      playing = true;
-      btn.classList.add("playing");
-    }).catch(() => {});
-  }
-}
-
-if (btn && audio) {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation(); // evita doble evento
-    if (playing) {
-      audio.pause();
-      btn.classList.remove("playing");
-      playing = false;
-    } else {
-      startMusic();
+  const audio = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicBtn');
+  let playing = false;
+  
+  btn.addEventListener('click', async () => {
+    try {
+      if (!playing) {
+        audio.currentTime = 0; // asegura inicio limpio
+        await audio.play();    // 👈 PROMISE requerida por iOS
+        btn.classList.add('playing');
+        playing = true;
+      } else {
+        audio.pause();
+        btn.classList.remove('playing');
+        playing = false;
+      }
+    } catch (err) {
+      console.log("iOS bloqueó el audio:", err);
     }
   });
-}
+  
 
 
 /* 👉 iPhone: tocar cualquier parte de la invitación */
