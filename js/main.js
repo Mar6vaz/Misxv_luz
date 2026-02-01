@@ -49,26 +49,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- MÚSICA ---------- */
-  const audio = document.getElementById('bgMusic');
-  const btn = document.getElementById('musicBtn');
-  let playing = false;
+ /* ---------- MÚSICA (iOS friendly) ---------- */
+const audio = document.getElementById('bgMusic');
+const btn = document.getElementById('musicBtn');
+let playing = false;
 
-  if (btn && audio) {
-    btn.addEventListener('click', () => {
-      if (!playing) {
-        audio.play().then(() => {
-          btn.classList.add('playing');
-          playing = true;
-        }).catch(err => {
-          console.log("Audio bloqueado:", err);
-        });
-      } else {
-        audio.pause();
-        btn.classList.remove('playing');
-        playing = false;
-      }
-    });
+function startMusic() {
+  if (!playing && audio) {
+    audio.play().then(() => {
+      playing = true;
+      btn.classList.add("playing");
+    }).catch(() => {});
   }
+}
+
+if (btn && audio) {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // evita doble evento
+    if (playing) {
+      audio.pause();
+      btn.classList.remove("playing");
+      playing = false;
+    } else {
+      startMusic();
+    }
+  });
+}
+
+/* 👉 iPhone: tocar cualquier parte de la invitación */
+document.addEventListener('touchstart', startMusic, { once: true });
+document.addEventListener('click', startMusic, { once: true });
 
   /* ---------- AUTO PLAY AL PRIMER TOQUE ---------- */
   document.addEventListener("click", () => {
