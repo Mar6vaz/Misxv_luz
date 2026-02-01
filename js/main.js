@@ -49,29 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---------- MÚSICA ---------- */
-  const audio = document.getElementById('bgMusic');
-  const btn = document.getElementById('musicBtn');
-  
-  let playing = false;
-  
-  btn.addEventListener('click', () => {
-  
-    if (!playing) {
-      audio.play().then(() => {
-        playing = true;
-        btn.classList.add('playing');
-      }).catch(() => {
-        alert("Toca el botón 🎵 para activar la música");
-      });
-  
-    } else {
+const audio = document.getElementById('bgMusic');
+const btn = document.getElementById('musicBtn');
+let playing = false;
+
+function startMusic() {
+  if (!playing && audio) {
+    audio.play().then(() => {
+      playing = true;
+      btn.classList.add("playing");
+    }).catch(() => {});
+  }
+}
+
+if (btn && audio) {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // evita doble evento
+    if (playing) {
       audio.pause();
-      btn.classList.remove('playing');
+      btn.classList.remove("playing");
       playing = false;
+    } else {
+      startMusic();
     }
-  
   });
-  
+}
 
 
 /* 👉 iPhone: tocar cualquier parte de la invitación */
